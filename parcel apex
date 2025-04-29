@@ -1,0 +1,21 @@
+public class ParcelManager {
+    public String parcelName { get; set; }
+    public String parcelStatus { get; set; }
+
+    public ParcelManager() {
+        parcelName = 'Default Parcel';
+        parcelStatus = 'Pending';
+    }
+
+    public String updateStatus(String newStatus) {
+        parcelStatus = newStatus;
+        return 'Parcel status updated to: ' + parcelStatus;
+    }
+}
+
+ParcelManager pm = new ParcelManager();
+System.debug('Parcel Name: ' + pm.parcelName);
+System.debug('Parcel Status: ' + pm.parcelStatus);
+
+String updatedStatus = pm.updateStatus('Delivered');
+System.debug(updatedStatus);
